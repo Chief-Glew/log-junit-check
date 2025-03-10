@@ -1,6 +1,8 @@
 package org.glew.logging.check;
 
 import org.glew.logging.check.annotation.Logs;
+import org.glew.logging.check.extension.ExpectFailure;
+import org.glew.logging.check.extension.TestShouldFailExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -43,19 +45,6 @@ class LogCheckExtensionTest {
     @Logs(forClass = TestClass.class, matching = NotContainFilter.class, shouldContain = "ImportantInfo")
     void testThatWeCanMatchSpecificLogs(){
         TestClass.unmaskedLoggingMethod("filter foo");
-        TestClass.unmaskedLoggingMethod("ImportantInfo");
-    }
-
-    @Test
-    @ExpectFailure
-    @Logs(shouldNotContain = "foo")
-    void testThatWeDontHaveToFilterAtAllForFailure(){
-        TestClass.unmaskedLoggingMethod("foo");
-    }
-
-    @Test
-    @Logs(shouldContain = "ImportantInfo")
-    void testThatWeDontHaveToFilterAtAll(){
         TestClass.unmaskedLoggingMethod("ImportantInfo");
     }
 

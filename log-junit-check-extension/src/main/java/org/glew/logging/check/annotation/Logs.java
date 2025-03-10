@@ -11,11 +11,15 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Repeatable(ManyLogs.class)
 public @interface Logs {
 
-    Class<?> forClass() default Logs.class;
+    Class<?> forClass();
 
     Class<? extends LogLinePredicate>[] matching() default {};
 
     String[] shouldNotContain() default {};
 
+    String[] eachLineShouldContain() default {};
+
     String[] shouldContain() default {};
+
+    boolean failOnNoLogs() default true;
 }

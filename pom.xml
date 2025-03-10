@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>log-junit-check-extension</module>
+        <module>log4j-junit-check</module>
     </modules>
 
     <properties>
@@ -24,6 +25,12 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter</artifactId>
                 <version>5.11.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>3.27.3</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

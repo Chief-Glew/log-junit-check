@@ -1,16 +1,15 @@
-package org.glew.logging.check;
+package org.glew.logging.check.observable;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class LogObservableTest {
+class StaticLogObservableTest {
 
     @Test
     void testThatObserverIsAdded() {
-        var observable = LogObservable.getInstance();
+        var observable = StaticLogObservable.getInstance();
         LogObserver observer = ll -> {};
         var observers = observable.observers();
 

@@ -1,4 +1,4 @@
-package org.glew.logging.check;
+package org.glew.logging.check.extension;
 
 import java.lang.annotation.Retention;
 
